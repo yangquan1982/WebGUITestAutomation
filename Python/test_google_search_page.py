@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from driver_factory import ChromeDriver
-import page
+from .driver_factory import ChromeDriver
+from .page import SearchPage, SearchResultsPage
 import pytest
 
 class TestGoogleSearch:
@@ -17,11 +17,11 @@ class TestGoogleSearch:
         cls.driver.get("https://www.google.com/")
 
     def test_google_search(self):
-        google_page = page.SearchPage(self.driver)
+        google_page = SearchPage(self.driver)
         assert google_page.is_title_matches()
         google_page.search_text_element = "Python"
         google_page.click_search_button()
-        search_results_page = page.SearchResultsPage(self.driver)
+        search_results_page = SearchResultsPage(self.driver)
         assert search_results_page.is_results_found()
     
     @classmethod

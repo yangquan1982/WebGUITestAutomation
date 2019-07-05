@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from element import BasePageElement
-from locators import SearchPageLocators
-import util
+from .element import BasePageElement
+from .locators import SearchPageLocators
+from .util import ClickElement
 
 class SearchTextElement(BasePageElement):
     """This class gets the search text from the specified locator"""
@@ -26,7 +26,7 @@ class SearchPage(BasePage):
 
     def click_search_button(self):
         """Triggers the search"""
-        util.ClickElement().click_by_locator(self.driver, SearchPageLocators.SEARCH_BTN_2)
+        ClickElement().click_by_locator(self.driver, SearchPageLocators.SEARCH_BTN_2)
 
 class SearchResultsPage(BasePage):
     """Search results page action methods come here"""
