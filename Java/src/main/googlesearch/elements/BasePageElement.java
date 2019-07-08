@@ -20,4 +20,12 @@ public abstract class BasePageElement {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return page.getDriver().findElement(locator).getAttribute("value");
     }
+
+    public By getLocator() {
+        return locator;
+    }
+
+    public void setLocator(By locator) {
+        this.locator = locator;
+    }
 }

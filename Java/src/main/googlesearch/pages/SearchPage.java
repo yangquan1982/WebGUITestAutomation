@@ -6,10 +6,14 @@ import utils.ClickElement;
 
 public class SearchPage extends BasePage {
     private SearchTextElement stEle;
+    private SearchBtn searchBtn;
+    private SearchBtn2 searchBtn2;
 
     public SearchPage(WebDriver driver) {
-        setDriver(driver);
+        super(driver);
         stEle = new SearchTextElement(this);
+        searchBtn = new SearchBtn(this);
+        searchBtn2 = new SearchBtn2(this);
     }
 
     public SearchTextElement getStEle() {
@@ -33,6 +37,10 @@ public class SearchPage extends BasePage {
     }
 
     public void clickSearchBtn() {
-        ClickElement.clickByLocator(driver, stEle.getLocator());
+        ClickElement.clickByLocator(driver, searchBtn.getLocator());
+    }
+
+    public void clickSearchBtn2() {
+        ClickElement.clickByLocator(driver, searchBtn2.getLocator());
     }
 }

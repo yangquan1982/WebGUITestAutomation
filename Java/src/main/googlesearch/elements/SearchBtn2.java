@@ -2,13 +2,11 @@ package elements;
 
 import locators.LocatorFactory;
 import locators.SearchTextLocatorFactory;
-import org.openqa.selenium.By;
 import pages.BasePage;
 
 public class SearchBtn2 extends BasePageElement{
 
     private LocatorFactory factory;
-    private By locator;
 
     public SearchBtn2(BasePage page) {
         factory = SearchTextLocatorFactory.getFactory();

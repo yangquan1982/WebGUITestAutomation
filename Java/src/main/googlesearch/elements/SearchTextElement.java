@@ -7,7 +7,6 @@ import pages.BasePage;
 public class SearchTextElement extends BasePageElement {
 
     private LocatorFactory factory;
-    private By locator;
 
     public SearchTextElement(BasePage page) {
         factory = SearchTextLocatorFactory.getFactory();
@@ -21,14 +20,6 @@ public class SearchTextElement extends BasePageElement {
 
     public void setFactory(LocatorFactory factory) {
         this.factory = factory;
-    }
-
-    public By getLocator() {
-        return locator;
-    }
-
-    public void setLocator(By locator) {
-        this.locator = locator;
     }
 
     public BasePage getPage() {
