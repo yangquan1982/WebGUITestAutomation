@@ -26,7 +26,7 @@ class SearchPage(BasePage):
 
     def click_search_button(self):
         """Triggers the search"""
-        click_element_by_locator(self.driver, SearchPageLocators.SEARCH_BTN_2)
+        click_element_with_index_by_locator(self.driver, SearchPageLocators.SEARCH_BTNS, 0)
 
 class SearchResultsPage(BasePage):
     """Search results page action methods come here"""
